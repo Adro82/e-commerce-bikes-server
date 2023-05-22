@@ -11,6 +11,16 @@ router.get("/getAllBikes", (req, res, next) => {
     .catch(err => next(err))
 });
 
+router.get("/getBike/:bike_id", (req, res, next) => {
+
+  const { bike_id } = req.params
+
+  Bikes
+    .findById(bike_id)
+    .then(response => res.json(response))
+    .catch(err => next(err))
+});
+
 router.post("/addBike", (req, res, next) => {
   const { brand, model, description, stock, imageUrl, price } = req.body
 
