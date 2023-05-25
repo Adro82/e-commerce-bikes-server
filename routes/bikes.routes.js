@@ -22,10 +22,10 @@ router.get("/getBike/:bike_id", (req, res, next) => {
 });
 
 router.post("/addBike", (req, res, next) => {
-  const { marca, model, description, stock, imageUrl, price } = req.body
+  const { brand, model, description, stock, imageUrl, price } = req.body
 
   Bikes
-    .create({ marca, model, description, stock, imageUrl, price })
+    .create({ brand, model, description, stock, imageUrl, price })
     .then(response => res.json(response))
     .catch(err => next(err))
 })

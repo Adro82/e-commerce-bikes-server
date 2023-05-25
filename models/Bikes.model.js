@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const productSchema = new Schema(
     {
-        marca: {
+        brand: {
             type: String,
             required: [true, 'La marca es obligatoria.'],
         },
